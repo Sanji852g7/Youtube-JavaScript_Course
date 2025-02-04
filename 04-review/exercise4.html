@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons</title>
+  <style>
+    .add-to-cart {
+      background-color: yellow;
+    }
+    .buy-now{
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <button>Click</button> <br>
+  <button>Sanji</button> <button>Momo</button> <br>
+  <p>Hello, World! <br>
+  Today I did a lot of self-learning on JavaScript!</p>
+  <p>Adults Plain Cotton T-shirt</p>
+  <p>Price: $7.99</p>
+  <button onclick="alert('Added')" class="add-to-cart">Add to cart</button>
+  <button class="buy-now">Buy now</button>
+
+  <script>
+    console.log('Welcome!');
+    document.querySelector('.buy-now').addEventListener("click", function(){
+      console.log("Loading...");
+
+      setTimeout(()=> {
+        alert("Purchased");
+      }, 1000)
+    });
+  </script>
+</body>
+</html>
