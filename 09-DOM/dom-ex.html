@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Exercise</title>
+</head>
+<body>
+  <!-- 9a - b -->
+  <button class="js-button">9a</button>
+  <button class="js-button2">9b</button>
+
+  <!-- 9c -->
+  <button onclick="
+  document.querySelector('.js-click-text').innerHTML = 'You chose: Heads'
+  ">heads</button>
+  <button onclick="
+  document.querySelector('.js-click-text').innerHTML = 'You chose: Tails'
+  ">tails</button>
+  <p class="js-click-text"></p>
+
+  <!-- 9d -->
+
+  <input placeholder="Name" class="js-input" 
+  onkeydown="
+  if (event.key === 'Enter') {
+    displayName();
+  }">
+  <button onclick="
+  displayName();
+  ">Submit</button>
+  <p class="js-message"></p>
+
+  <!-- 9e 
+  <input placeholder="Name" class="js-input" 
+  onkeydown="
+  if (event.key === 'Enter') {
+    displayName();
+  }">
+-->
+
+
+
+
+  <script>
+  //9 a - b 
+  console.log(document.querySelector('.js-button'));
+  document.querySelector('.js-button2')
+    .innerHTML = '9b done';
+  
+  //9d
+  function displayName () {
+    const inputElement = document.querySelector('.js-input');
+    document.querySelector('.js-message').innerHTML = `Your name is: ${inputElement.value}`;
+  }
+
+  
+  </script>
+</body>
+</html>

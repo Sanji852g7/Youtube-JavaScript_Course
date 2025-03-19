@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Hard Excercise 2</title>
+</head>
+<body>
+  <input class="js-input" onkeyup="
+    if (event.key){
+      displayMessage();
+    }">
+  <p class="js-text-message"></p>
+
+  <script>
+    function displayMessage() {
+      const inputElement = document.querySelector('.js-input');
+      document.querySelector('.js-text-message').innerHTML = `${inputElement.value}`;
+    }
+  </script>
+</body>
+</html>
