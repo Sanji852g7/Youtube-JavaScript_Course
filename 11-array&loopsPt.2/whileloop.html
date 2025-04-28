@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>While loop</title>
+</head>
+<body>
+  <script>
+    /* In a while loop you have to put the increment manually unlike for loop which does it automatically. This is because if you dont the code will cause infinite loop. Since in a while loop the code will skip the increment step. Before the continue you have to put the increment. */
+    let i = 1;
+    while (i <= 10){
+      if (i%3 ===0){
+        i++;
+        continue;
+      }
+      console.log(i);
+      i++;
+    }
+  </script>
+</body>
+</html>

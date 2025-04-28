@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For loop</title>
+</head>
+<body>
+  <script>
+    /* Break feature = stop a loop early so this code stop at 8 intsead of 10 */
+    for (let i=1; i <= 10; i++){
+      console.log(i);
+      if (i ===8){
+        break;
+      }
+    }
+
+    /* Continue feature = skip 1 iteration so this code below skips number 3 */
+    for (let i=1; i <= 10; i++){
+      if (i===3){
+        continue;
+      }
+      console.log(i);
+      if (i ===8){
+        break;
+      }
+    }
+
+    /* Skipping a number divisible by 3 */
+    for (let i=1; i <= 10; i++){
+      if (i%3 === 0){
+        continue;
+      }
+      console.log(i);
+      if (i ===8){
+        break;
+      }
+    }
+  </script>
+</body>
+</html>

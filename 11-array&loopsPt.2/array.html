@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array</title>
+</head>
+<body>
+  <script>
+    const array1 = [1,2,3];
+    /* .slice makes its so that there are two variable pointing to two different array */
+    const array2 = array1.slice();
+    array2.push(4);
+    console.log(array1);
+    console.log(array2);
+
+    /* Destructuring(shortcut for getting value out of array) */
+    const [firstValue, secondValue] = [1,2,3];
+    /* This takes the first value and second value of the second array and save it in a variable called firstValue and secondValue */
+    
+  </script>
+</body>
+</html>
