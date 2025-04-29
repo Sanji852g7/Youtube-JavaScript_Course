@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <script>
+    // Function review
+    function greeting(){
+      console.log('Hello');
+    }
+    greeting();
+
+    // const function1 = function greeting2() {}
+    // You do not need function name since you can access the function with the variable name. This is called anonymous function
+    const function1 = function(){
+      console.log('Namaste');
+    }
+    console.log(function1);
+    console.log(typeof function1);
+    function1();
+
+    // Function inside an object = method
+    const object1 = {
+      num: 2,
+      //fun: function greeting2(){ 
+      // You don't need function name here too
+      fun: function(){
+        console.log('Ni hao');
+      }
+    };
+    object1.fun();
+    console.log(object1.num); 
+
+    // Pass a value into a Function
+    function display(param){
+      console.log(param);
+    }
+    display(2);
+
+    //Pass a function into a function
+    function run(param1){
+      param1();
+    }
+    run(function(){
+      console.log('Hi')
+    });
+
+    // Example of setTimeout();
+    setTimeout(function(){
+      console.log('timeout');
+      console.log('timeout2'); // This is Synchronous code
+    }, 3000 ); 
+
+    // setTimeout is Asynchronous code - It wont wait for a line to finish before going to the next line. So even if setTimeout code is above the string 'next line', it will only display it after.
+    console.log('next line'); 
+
+    // Synchronous code - will wait for one line to finish before going to the next line.
+  </script>
+</body>
+</html>
