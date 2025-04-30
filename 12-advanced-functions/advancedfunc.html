@@ -58,6 +58,32 @@
     console.log('next line'); 
 
     // Synchronous code - will wait for one line to finish before going to the next line.
+
+    /*
+    // Another builtin functions like setTimeout is called setInterval();
+    //setInterval takes the same parameter as setTimeout
+    //setInterval will run this functions 3 second in the future BUT it will keep running the functions every 3 seconds. setInterval is also Asynchronous 
+    setInterval(function(){
+      console.log('interval');
+    }, 3000);
+    console.log('next line');
+    */
+
+
+
+    //Another way to loop through an Array is by using a method of the array called .forEach();
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value, index){ // index for the position of the value of the array
+      if (value === 'wash dishes') {
+        return; // Return does same thing as continue. It will end this function early. forEach() doesnt have continue;
+        // Break; lets us exit a loop early. there is not a easy way to break using .forEach(); - If we need to use break; its better to use a regular for loop 
+      }
+      console.log(index); // Displays the index of each values 
+      console.log(value);
+    });
   </script>
 </body>
 </html>
