@@ -6,9 +6,7 @@
   <title>Advanced Functions Part 1 Exercise</title>
 </head>
 <body>
-  <Button class="js-button" onclick="
-      updateButton();
-    ">Start</Button>
+  <Button class="js-button">Start</Button>
 
   <!--12 e-->
   <button onclick="
@@ -36,7 +34,7 @@
 
   <script>
     // 12a. Create a variable called 'add' and save a function inside. This function will console.log(2+3); Run the function twice.
-    const add = function (){
+    const add = () => {
       console.log(2+3);
     }
     add();
@@ -48,7 +46,7 @@
       fun();
     }
 
-    runTwice(function() {
+    runTwice(() => {
       console.log('12b');
     });
 
@@ -56,14 +54,25 @@
 
     //12c. Create a button below. When clicking the button, after 1 second, the text inside the button changes to 'Finished!'. (Hint: use setTimeput() and DOM)
     //12d. Continuing from c, modify the button so that when we click it the text immediately changed to 'Loading...', and the after 1 second it changed to 'Finished!'
+    /*
     function updateButton (){
       const button = document.querySelector('.js-button');
 
       button.innerHTML = 'Loading...';
-      setTimeout(function(){
+      setTimeout(() => {
         button.innerHTML = 'Finished!';
       }, 1000);
     }
+      */
+    //12q updated version using addEventListener
+    document.querySelector('.js-button')
+      .addEventListener('click', () => {
+        const button = document.querySelector('.js-button');
+
+        setTimeout(() => {
+        button.innerHTML = 'Finished!';
+      }, 1000);
+      });
 
     //12e. Create the 'Add to cart' button below. When clicking this button, display the message 'Added' below the button. Then, after 2 seconds, remove the message.
     //12f. Modify the code so when we click on the button, it refreshes the 2 second time by using clearTimeout();
@@ -81,7 +90,7 @@
 
       clearTimeout(timeoutId);
 
-      timeoutId = setTimeout(function(){
+      timeoutId = setTimeout(() => {
         messageElement.innerHTML = '';
       }, 2000);}
       //12g. Use setInterval and docoment.title to create a feature that makes the title change every 1 second.
@@ -110,7 +119,7 @@
 
         isDisplayingNotification = true;
 
-        intervalId = setInterval(function() {
+        intervalId = setInterval(() => {
           if (document.title === 'App') {
             document.title = `(${messages}) New messages`;
           } else {
