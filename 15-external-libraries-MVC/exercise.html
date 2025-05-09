@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>External Libraries, MVC</title>
+</head>
+<body>
+  <script type="module">
+    import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+    import isWeekend from './ex15f.js';
+
+    //15a. Using DayJS, get the date 5 days after today and display it in the format: '<Month> <Day of Month>'
+    const today = dayjs();
+
+    const date1 = today.add(5, 'days');
+    console.log(date1.format('MMMM D'));
+
+    //15b. Calculate 1 month after today and display in the same format as 15a
+    const date2 = today.add(1, 'month');
+    console.log(date2.format('MMMM D'));
+
+    //15c. Calculate 1 month before today
+    const date3 = today.subtract(1, 'month');
+    console.log(date3.format('MMMM D'));
+
+    //15d. Get a date from DayJS and display it in this format: '<Day of Week>' (The format should be Monday, Tuesday)
+    console.log(today.format('dddd'));
+
+    //15e. Create a function isWeekend(date) that takes DayJS object, and returns whether the date is 'Saturday' or 'Sunday'. Then test this function with few different dates.
+    /* function isWeekend(date) {
+        const dayOfWeek = date.format('dddd');
+        return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+      } */
+
+      // Test this function using a few different dates.
+      let date = dayjs();
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(2, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(4, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      date = dayjs().add(6, 'day');
+      console.log(date.format('dddd, MMMM D'));
+      console.log(isWeekend(date));
+
+      //15f. Move isWeekend() into a separate file and use export default. Import this function in another file and run it.
+      isWeekend(date);
+  </script>
+</body>
+</html>
