@@ -122,7 +122,7 @@ export function renderOrderSummary(){
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
         removeFromCart(productId);
-
+        localStorage.setItem('cart', JSON.stringify(cart));
         renderCheckoutHeader();
         renderOrderSummary();
         renderPaymentSummary();
@@ -134,6 +134,7 @@ export function renderOrderSummary(){
       element.addEventListener('click', () => {
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
+        localStorage.setItem('cart', JSON.stringify(cart));
         renderOrderSummary();
         renderPaymentSummary();
       });
@@ -152,7 +153,6 @@ export function renderOrderSummary(){
     .forEach((link) => {
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
-
         const container = document.querySelector(
           `.js-cart-item-container-${productId}`
         );
@@ -181,7 +181,10 @@ export function renderOrderSummary(){
         alert('Quantity must be at least 0 and less than 1000');
         return;
       }
+
       updateQuantity(productId, newQuantity);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCheckoutHeader();
 
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`
