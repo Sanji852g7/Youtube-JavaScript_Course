@@ -21,7 +21,7 @@ Promise.all([
   })
 
 ]).then((values) => {
-  console.log(value);
+  console.log(values);
   renderCheckoutHeader();
   renderOrderSummary();
   renderPaymentSummary();
